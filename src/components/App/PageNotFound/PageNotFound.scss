@@ -1,0 +1,36 @@
+@use './../../../styles/vars';
+
+//* ============ VERSION DESKTOP ============
+
+.pageNotFound-container {
+  transition: 0.3s ease-in-out;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  background-color: vars.$theme1-primary;
+  color: vars.$theme1-secondary;
+  font-size: 45px;
+  text-align: center;
+  flex-direction: column;
+  &-text {
+    margin-bottom: 20px;
+  }
+}
+
+//* ============ VERSION MOBILE ============
+
+@media screen and (max-width: 1000px) {
+  .pageNotFound-container {
+    font-size: 22px;
+    &-text {
+      margin: 0px 10px;
+    }
+    img {
+      scale: 0.6;
+      margin: 0 10px;
+    }
+  }
+}

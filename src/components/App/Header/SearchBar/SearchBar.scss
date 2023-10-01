@@ -1,0 +1,42 @@
+@use './../../../../styles/vars';
+
+//* ============ VERSION DESKTOP ============
+
+.SearchBar {
+  form {
+    input {
+      background-color: vars.$theme1-primary;
+      border: 2px solid vars.$theme1-secondary;
+      border-radius: 11px;
+      height: 32px;
+      // padding: 0 15px;
+      background-image: url('/images/loupe.svg');
+      background-repeat: no-repeat;
+      background-position: 3%;
+      background-size: 17px;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      margin-bottom: 12px;
+      color: vars.$theme1-secondary;
+
+      &::placeholder {
+        color: vars.$theme1-secondary;
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+//* ============ VERSION MOBILE ============
+
+@media screen and (max-width: 900px) {
+
+  .SearchBar {
+    form {
+      input {
+        width: 60vw;
+      }
+    }
+  }
+}

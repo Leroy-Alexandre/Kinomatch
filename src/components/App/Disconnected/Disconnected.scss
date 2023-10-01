@@ -1,0 +1,28 @@
+@use './../../../styles/vars';
+
+//* ============ VERSION DESKTOP ============
+
+.disconnected-container {
+  transition: 1s ease-in-out;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  opacity: 0.9;
+  z-index: 99999;
+  background-color: vars.$theme1-primary;
+  color: vars.$theme1-secondary;
+  font-size: 45px;
+  text-align: center;
+  backdrop-filter: blur(5px);
+}
+
+//* ============ VERSION MOBILE ============
+
+@media screen and (max-width: 1000px) {
+  .disconnected-container {
+    font-size: 22px;
+  }
+}

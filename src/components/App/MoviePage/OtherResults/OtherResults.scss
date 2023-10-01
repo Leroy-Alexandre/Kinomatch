@@ -1,0 +1,197 @@
+@use '../../../../styles/vars';
+
+//* DESKTOP VERSION =================
+
+@media screen and (min-width: 900px) {
+  .otherResults-container {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    align-items: flex-start;
+    justify-content: center;
+    width: 18%;
+    max-width: 16%;
+    height: 100%;
+    margin-top: 20px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &--pellicule {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      // background-color: vars.$theme1-secondary;
+      // background-image: url('/images/pelloche.png');
+      // background-size: contain;
+      // background-position: center;
+    }
+
+    .infinite-scroll-component__outerdiv {
+      width: 100%;
+    }
+
+    .infinite-scroll-component {
+      //test
+      // height: 100vh;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &--scrollList {
+      display: flex;
+      background-color: vars.$theme1-secondary;
+      width: 100%;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 10px 0 35px 0;
+
+      button {
+        border: none;
+        background-color: vars.$theme1-primary;
+        background-image: url('/images/pellochebgaffiche.png');
+        background-position: center;
+        background-size: contain;
+        // background-repeat: no-repeat;
+        width: 100%;
+        position: relative;
+      }
+
+      &---images {
+        display: block;
+        margin: 0 auto 0.3rem auto;
+        border-radius: 10px;
+        width: 70%;
+        max-width: 220px;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.03);
+          cursor: pointer;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      &---movieTitle {
+        color: vars.$theme1-secondary;
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: bold;
+        padding: 0 0.2rem;
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &--rate {
+      position: absolute;
+      background-color: vars.$theme1-primary;
+      border: 2px solid vars.$theme1-secondary;
+      color: vars.$theme1-secondary;
+      height: 40px;
+      width: 40px;
+      border-radius: 25px;
+      left: 12%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+  }
+}
+
+//* MOBILE VERSION =================
+
+@media screen and (max-width: 900px) {
+  .otherResults-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 71px auto auto auto;
+    padding-bottom: 80px;
+    width: 100%;
+    height: auto;
+    z-index: 5;
+    overflow: hidden;
+
+    &--pellicule {
+      // display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: vars.$theme1-secondary;
+    }
+
+    &--scrollList {
+      display: flex;
+      background-color: vars.$theme1-secondary;
+      width: 100%;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 0 40px 0;
+
+      button {
+        border: none;
+        background-color: vars.$theme1-primary;
+        background-image: url('/images/pellochebgaffiche.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        position: relative;
+      }
+
+      &---title {
+        display: none;
+      }
+
+      &---images {
+        display: block;
+        margin: 0 auto 0.3rem auto;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 260px;
+      }
+
+      &---movieTitle {
+        color: #fff3b0;
+        text-align: center;
+        font-size: 1.1rem;
+        width: 30%;
+        font-weight: bold;
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    // note sur les affiches
+    &--rate {
+      position: absolute;
+      background-color: vars.$theme1-primary;
+      border: 2px solid vars.$theme1-secondary;
+      color: vars.$theme1-secondary;
+      height: 60px;
+      width: 60px;
+      border-radius: 50px;
+      left: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+  }
+}

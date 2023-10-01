@@ -1,0 +1,91 @@
+@use './../../../../styles/vars';
+
+//* ============ VERSION DESKTOP ============
+
+@media screen and (min-width: 900px) {
+  .BurgerMenu {
+    display: none;
+  }
+}
+
+//* ============ VERSION MOBILE ============
+
+@media screen and (max-width: 900px) {
+  .burgerMenu {
+    position: relative;
+    z-index: 7;
+
+    &-footer {
+      position: absolute;
+      width: 100%;
+      height: 40px;
+      z-index: 7;
+      bottom: 0;
+    }
+
+    &__container {
+      transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      z-index: 7;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: vars.$theme1-primary;
+      color: vars.$theme1-secondary;
+      &__button {
+        list-style: none;
+      }
+
+      &__button--home {
+        margin-bottom: 50px;
+        z-index: 5;
+        list-style: none;
+      }
+
+      &__items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        &__text {
+          margin-bottom: 50px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        ul {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 15px;
+        }
+        button {
+          color: vars.$theme1-primary;
+          background-color: vars.$theme1-secondary;
+          border-radius: 11px;
+          border: vars.$theme1-secondary;
+          font-size: 20px;
+          margin-bottom: 7px;
+          padding: 10px 20px;
+          z-index: 4;
+          width: 60vw;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      &-cross {
+        position: absolute;
+        right: 5%;
+        top: 4%;
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@use './../../../styles/vars';
+
+//* ============ VERSION DEKSTOP ============
+
+.loading-container {
+  z-index: 99999;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: vars.$theme1-primary;
+  opacity: 0.8;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  &__image {
+    scale: 0.4;
+    &__name {
+      position: relative;
+      &__roll {
+        position: absolute;
+        left: -10px;
+        transform: translateY(-50%);
+        animation: rotation 2s infinite linear;
+      }
+    }
+  }
+}
+
+//* ============ VERSION MOBILE ============
+
+@media screen and (max-width: 900px) {
+  .loading-container {
+    &__image {
+      scale: 0.15;
+    }
+  }
+}
+
+//* ============ ANIMATION ============
+
+// ================= KEYFRAMES =================
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

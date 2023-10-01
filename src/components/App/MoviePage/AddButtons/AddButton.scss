@@ -1,0 +1,111 @@
+@use '../../../../styles/vars';
+
+//* DESKTOP VERSION =================
+
+@media screen and (min-width: 900px) {
+  // Mixin pour les styles de base des boutons
+  @mixin button-styles-desktop {
+    all: unset;
+    scale: 1.6;
+    margin: 1.5rem 1rem 0.6rem 0.2rem;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.3);
+      cursor: pointer;
+    }
+  }
+
+  @mixin bubble-styles-buttons {
+    display: inline-block;
+    position: absolute;
+    font-size: 1rem;
+    transform: translate(80%, 20%);
+    border-radius: 6px;
+    padding: 6px;
+    color: vars.$theme1-primary;
+    background-color: vars.$theme1-secondary;
+    animation: appearAndDisappear 3s ease-in-out;
+  }
+
+  .movieFound__essentiel {
+    &-btn--bubble {
+      @include bubble-styles-buttons;
+    }
+
+    @keyframes appearAndDisappear {
+      0% {
+        opacity: 1;
+      }
+
+      33% {
+        opacity: 1;
+      }
+
+      66% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    // contenaire des boutons
+    &-btn--container {
+      display: flex;
+      width: fit-content;
+      // margin: 0 0
+    }
+
+    // Bouton "ajouter aux likes"
+    &-btn--addToLike {
+      @include button-styles-desktop;
+    }
+
+    // Bouton "ajouter aux favoris"
+    &-btn--addToWatch {
+      @include button-styles-desktop;
+    }
+
+    // Bouton "à voir"
+    &-btn--addToViewed {
+      @include button-styles-desktop;
+      scale: 1.8rem;
+    }
+  }
+}
+
+//* MOBILE VERSION =================
+
+@media screen and (max-width: 900px) {
+  // Mixin pour les styles de base des boutons
+  @mixin button-styles-mobile {
+    all: unset;
+    scale: 1.4;
+    margin: 1.5rem 1rem 0.6rem 0.1rem;
+  }
+
+  .movieFound__essentiel {
+    &-btn--container {
+      display: flex;
+      width: fit-content;
+      // margin: 0 0.7rem;
+    }
+
+    // Bouton "ajouter aux likes"
+    &-btn--addToLike {
+      @include button-styles-mobile;
+    }
+
+    // Bouton "ajouter aux favoris"
+    &-btn--addToWatch {
+      @include button-styles-mobile;
+    }
+
+    // Bouton "à voir"
+    &-btn--addToViewed {
+      @include button-styles-mobile;
+    }
+  }
+}
